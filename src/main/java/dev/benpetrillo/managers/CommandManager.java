@@ -42,6 +42,7 @@ public final class CommandManager {
         commands.put("help", new HelpCommand());
         commands.put("shutdown", new ShutdownCommand());
         commands.put("userinfo", new UserInfoCommand());
+        commands.put("taskforces", new TaskforceCommand());
     }
 
     /**
