@@ -28,8 +28,6 @@ public class BindCommand implements ApplicationCommand {
 
     private final String name = "bind";
     private final String description = "Create an audio connection to your voice channel.";
-    private final String[] options = {};
-    private final String[] optionDescriptions = {};
 
     @Override
     public void runCommand(SlashCommandEvent event, Member member, Guild guild) {

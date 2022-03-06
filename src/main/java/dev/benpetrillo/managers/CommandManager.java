@@ -34,15 +34,15 @@ public final class CommandManager {
     public CommandManager() {
         commands = new HashMap<>();
         commands.put("ping", new PingCommand());
-        commands.put("foundation", new FoundationCommand());
+        commands.put("foundation", new MissionCommand());
         commands.put("branches", new BranchesCommand());
         commands.put("scp", new SCPCommand());
         commands.put("bind", new BindCommand());
         commands.put("stream", new StreamCommand());
         commands.put("help", new HelpCommand());
         commands.put("shutdown", new ShutdownCommand());
+        commands.put("stop", new StopCommand());
         commands.put("userinfo", new UserInfoCommand());
-        commands.put("taskforces", new TaskforceCommand());
     }
 
     /**

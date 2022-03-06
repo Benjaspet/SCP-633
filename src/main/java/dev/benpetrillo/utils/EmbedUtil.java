@@ -46,13 +46,15 @@ public class EmbedUtil {
                         "normal desktop computer with the exception that its performance, operating system, contained data, " +
                         "and language appears to be different upon every activation. This anomaly is used to access " +
                         "classified Foundation data. `!` is the system's command prefix.")
-                .addField("All System Commands", "" +
-                        "`bind` - have the anomaly join your voice channel." + "\n" +
-                        "`branches` - view all SCP Foundation worldwide branches." + "\n" +
-                        "`foundation <query>` - view information about the SCP Foundation." + "\n" +
-                        "`help` - access SCP-062's help menu." + "\n" +
-                        "`scp <anomaly>` - view classified data on any SCP anomaly." + "\n" +
-                        "`stream` - access the Foundation's anomaly radio system.", false)
+                .addField("All System Commands", """
+                        `bind` - have the anomaly join your voice channel.
+                        `branches` - view all SCP Foundation worldwide branches.
+                        `mission` - view the mission of the SCP Foundation.
+                        `help` - access SCP-062's help menu.
+                        `scp <anomaly>` - view classified data on any SCP anomaly.
+                        `stream` - access the Foundation's anomaly radio system.
+                        `stop` - disconnect from the radio system.
+                        `userinfo` - view information on a user.""",false)
                 .setFooter("SCP-062 Operating System", jda.getSelfUser().getAvatarUrl())
                 .setTimestamp(new Date().toInstant());
         return embed.build();

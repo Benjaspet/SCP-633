@@ -61,8 +61,6 @@ public final class SCP062Bot {
                         new GuildActivityListener(),
                         new SlashCommandListener()
                 ).build();
-        Guild guild = jda.getGuildById(Config.get("GUILD"));
-        System.out.print(guild);
         AllowedMentions.setDefaultMentionRepliedUser(false);
         commandManager = new CommandManager();
         slashCommandManager = new SlashCommandManager(jda, true);

@@ -19,8 +19,10 @@
 package dev.benpetrillo.commands.message;
 
 import dev.benpetrillo.types.MessageCommand;
+import dev.benpetrillo.utils.EmbedUtil;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.TextChannel;
 
 public class PingCommand implements MessageCommand {
@@ -29,7 +31,8 @@ public class PingCommand implements MessageCommand {
     public void runCommand(Member member, TextChannel channel, Message message, String[] args) {
         try {
             long gatewayPing = member.getJDA().getGatewayPing();
-            message.reply("Pong!" + "\n" + "Gateway latency: " + gatewayPing + "ms").queue();
+            MessageEmbed embed = EmbedUtil.sendDefaultEmbed("Pong!" + "Gateway latency: " + gatewayPing + "ms", message.getJDA());
+            message.replyEmbeds(embed).queue();
         } catch (ArrayIndexOutOfBoundsException exception) {
             message.reply("An error occurred while running this command.").queue();
         }

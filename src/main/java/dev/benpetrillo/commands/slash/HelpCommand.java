@@ -31,8 +31,6 @@ public class HelpCommand implements ApplicationCommand {
 
     private final String name = "help";
     private final String description = "Obtain a list of all available commands.";
-    private final String[] options = {};
-    private final String[] optionDescriptions = {};
 
     @Override
     public void runCommand(SlashCommandEvent event, Member member, Guild guild) {

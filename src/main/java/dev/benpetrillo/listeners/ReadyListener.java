@@ -20,9 +20,7 @@ package dev.benpetrillo.listeners;
 
 import dev.benpetrillo.Config;
 import dev.benpetrillo.SCP062Bot;
-import dev.benpetrillo.commands.slash.BindCommand;
-import dev.benpetrillo.commands.slash.HelpCommand;
-import dev.benpetrillo.commands.slash.SCPCommand;
+import dev.benpetrillo.commands.slash.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.ReadyEvent;
@@ -44,9 +42,13 @@ public class ReadyListener extends ListenerAdapter {
             if (guild != null) {
                 if (Boolean.parseBoolean(Config.get("DEPLOY-GUILD"))) {
                     CommandListUpdateAction commands = guild.updateCommands().addCommands(
-                            new SCPCommand().getCommandData(),
                             new BindCommand().getCommandData(),
-                            new HelpCommand().getCommandData()
+                            new BranchesCommand().getCommandData(),
+                            new HelpCommand().getCommandData(),
+                            new MissionCommand().getCommandData(),
+                            new SCPCommand().getCommandData(),
+                            new StopCommand().getCommandData(),
+                            new StreamCommand().getCommandData()
                     );
                     commands.queue();
                     SCP062Bot.logger.info("All guild slash commands have been deployed.");

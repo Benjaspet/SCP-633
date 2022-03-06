@@ -20,9 +20,7 @@ package dev.benpetrillo.managers;
 
 import dev.benpetrillo.Config;
 import dev.benpetrillo.SCP062Bot;
-import dev.benpetrillo.commands.slash.BindCommand;
-import dev.benpetrillo.commands.slash.HelpCommand;
-import dev.benpetrillo.commands.slash.SCPCommand;
+import dev.benpetrillo.commands.slash.*;
 import dev.benpetrillo.types.ApplicationCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -40,14 +38,22 @@ public class SlashCommandManager extends ListenerAdapter {
     public SlashCommandManager(JDA jda, boolean print) {
         commands = new ConcurrentHashMap<>();
         commands.put(new BindCommand().getName(), new BindCommand());
-        commands.put(new SCPCommand().getName(), new SCPCommand());
+        commands.put(new BranchesCommand().getName(), new BranchesCommand());
         commands.put(new HelpCommand().getName(), new HelpCommand());
+        commands.put(new MissionCommand().getName(), new MissionCommand());
+        commands.put(new SCPCommand().getName(), new SCPCommand());
+        commands.put(new StopCommand().getName(), new StopCommand());
+        commands.put(new StreamCommand().getName(), new StreamCommand());
         if (Boolean.parseBoolean(Config.get("DEPLOY-GLOBAL"))) {
             CommandListUpdateAction commands = jda.updateCommands();
             commands.addCommands(
-                    new SCPCommand().getCommandData(),
                     new BindCommand().getCommandData(),
-                    new HelpCommand().getCommandData()
+                    new BranchesCommand().getCommandData(),
+                    new HelpCommand().getCommandData(),
+                    new MissionCommand().getCommandData(),
+                    new SCPCommand().getCommandData(),
+                    new StopCommand().getCommandData(),
+                    new StreamCommand().getCommandData()
             ).queue();
             SCP062Bot.logger.info("All slash commands have been deployed.");
         } else if (Boolean.parseBoolean(Config.get("DELETE-GLOBAL"))) {

@@ -66,7 +66,13 @@ public class StreamCommand implements MessageCommand {
                 "https://www.youtube.com/watch?v=RE3XR3WZjF8",
                 "https://www.youtube.com/watch?v=79MvZdbInOc",
                 "https://www.youtube.com/watch?v=E_Y0swRJiAQ",
-                "https://www.youtube.com/watch?v=yjWYdDaTYAE"
+                "https://www.youtube.com/watch?v=yjWYdDaTYAE",
+                "https://www.youtube.com/watch?v=dTpKABK_l4A",
+                "https://www.youtube.com/watch?v=hMJwQ47W8ZU",
+                "https://www.youtube.com/watch?v=o6JXQm5pcDI",
+                "https://www.youtube.com/watch?v=8v93A-lR5l4",
+                "https://www.youtube.com/watch?v=u8UV86NBifI",
+                "https://www.youtube.com/watch?v=ptWWkLfLNV0"
         });
     }
 }
