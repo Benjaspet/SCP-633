@@ -38,7 +38,7 @@ public class SCPCommand implements MessageCommand {
     public void runCommand(Member member, TextChannel channel, Message message, String[] args) {
         EmbedBuilder embed = new EmbedBuilder();
         embed.setColor(Utilities.getDefaultEmbedColor());
-        embed.setFooter("SCP-062 Operating System", member.getJDA().getSelfUser().getAvatarUrl());
+        embed.setFooter("SCP-633", member.getJDA().getSelfUser().getAvatarUrl());
         embed.setTimestamp(new Date().toInstant());
         try {
             switch (args.length) {

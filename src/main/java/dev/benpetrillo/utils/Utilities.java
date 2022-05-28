@@ -72,6 +72,6 @@ public class Utilities {
      */
 
     public static Color getDefaultEmbedColor() {
-        return Color.decode("#8c98ff");
+        return Color.decode("#4287f5");
     }
 }

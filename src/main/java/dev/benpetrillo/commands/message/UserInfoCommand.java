@@ -45,7 +45,7 @@ public final class UserInfoCommand implements MessageCommand {
                         .setThumbnail(name.getUser().getAvatarUrl())
                         .setDescription("Created: <t:" + created + ":R>" + "\n" + "Joined: " + "<t:" + epoc + ":R>")
                         .addField("User ID", name.getUser().getId(), false)
-                        .setFooter("SCP-062 Operating System", message.getJDA().getSelfUser().getAvatarUrl())
+                        .setFooter("SCP-633", message.getJDA().getSelfUser().getAvatarUrl())
                         .setTimestamp(new Date().toInstant());
                 message.replyEmbeds(embed.build()).queue();
             } catch (IndexOutOfBoundsException ignored) {

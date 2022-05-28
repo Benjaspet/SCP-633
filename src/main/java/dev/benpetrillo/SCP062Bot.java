@@ -51,7 +51,6 @@ public final class SCP062Bot {
     private SCP062Bot(String token) throws LoginException, IllegalArgumentException, InterruptedException {
         BasicConfigurator.configure();
         JDA jda = JDABuilder.createDefault(token)
-                .setActivity(Activity.watching("over the foundation."))
                 .setStatus(OnlineStatus.ONLINE)
                 .enableIntents(GatewayIntent.GUILD_MEMBERS)
                 .addEventListeners(

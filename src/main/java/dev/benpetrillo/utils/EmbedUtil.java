@@ -31,14 +31,13 @@ public class EmbedUtil {
     public static MessageEmbed sendDefaultEmbed(String content, JDA jda) {
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(Utilities.getDefaultEmbedColor())
-                .setDescription(content)
-                .setFooter("SCP-062 Operating System", jda.getSelfUser().getAvatarUrl());
+                .setDescription(content);
         return embed.build();
     }
 
     public static MessageEmbed getHelpEmbed(JDA jda) {
         EmbedBuilder embed = new EmbedBuilder()
-                .setTitle("SCP-062 OS | Help")
+                .setTitle("Help | SCP-633")
                 .setColor(Utilities.getDefaultEmbedColor())
                 .setDescription("SCP-062 appears to be an unbranded personal desktop computer housed in an aluminum " +
                         "case of indeterminate manufacture. SCP-062 is unusually heavy at approximately 24kg, and lacks " +
@@ -55,7 +54,7 @@ public class EmbedUtil {
                         `stream` - access the Foundation's anomaly radio system.
                         `stop` - disconnect from the radio system.
                         `userinfo` - view information on a user.""",false)
-                .setFooter("SCP-062 Operating System", jda.getSelfUser().getAvatarUrl())
+                .setFooter("SCP-633", jda.getSelfUser().getAvatarUrl())
                 .setTimestamp(new Date().toInstant());
         return embed.build();
     }
@@ -84,7 +83,7 @@ public class EmbedUtil {
                         "or new theories of science can be devised based on their properties and behavior. The " +
                         "Foundation may also neutralize or destroy anomalies as an option of last resort, if they " +
                         "are determined to be too dangerous to be contained.", false)
-                .setFooter("SCP-062 Operating System", jda.getSelfUser().getAvatarUrl())
+                .setFooter("SCP-633", jda.getSelfUser().getAvatarUrl())
                 .setTimestamp(new Date().toInstant());
         return embed.build();
     }
@@ -108,7 +107,7 @@ public class EmbedUtil {
                     .addField("German", german, false)
                     .addField("Chinese", chinese, false)
                     .addField("French", french, false)
-                    .setFooter("SCP-062 Operating System", jda.getSelfUser().getAvatarUrl())
+                    .setFooter("SCP-633", jda.getSelfUser().getAvatarUrl())
                     .setTimestamp(new Date().toInstant());
             return embed.build();
         } catch (IOException ignored) {
