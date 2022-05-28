@@ -1,8 +1,8 @@
-# SCP-062 OS
+# SCP-633
 
 WARNING! CLASSIFIED INFORMATION BELOW!
 
-SCP-062 OS is a Discord bot for the SCP Foundation. It permits foundation personnel of Level I or higher to access anomaly data and other foundation information.
+SCP-633 is a Discord bot for the SCP Foundation. It permits foundation personnel of Level I or higher to access anomaly data and other foundation information.
 
 Please note: this project is a work-in-progress. Bugs/issues are expected. If you've found one or would like to contribute, don't hesitate to make a pull request.
 
@@ -10,7 +10,7 @@ Please note: this project is a work-in-progress. Bugs/issues are expected. If yo
 
 SCP-062 OS supports slash commands and prefix commands.
 
-- ``bind`` - Have SCP-062 create a connection to your voice channel.
+- ``bind`` - Have SCP-633 create a connection to your voice channel.
 - ``branches`` – View a list of all foundation branches.
 - ``foundation`` – View miscellaneous foundation information.
 - ``help`` - View a list of all available commands.
@@ -31,6 +31,6 @@ SCP-062 OS required a valid Ponjo API key to function properly. To obtain one of
 
 ### License
 
-© Copyright 2021 Ben Petrillo. All rights reserved.
+© Copyright 2022-Present Ben Petrillo. All rights reserved.
 
 SCP-062 is licensed under the [MIT License](https://www.mit.edu/~amini/LICENSE.md), and modification is permitted provided that proper credit is given to the original author(s).
