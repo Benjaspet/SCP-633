@@ -19,7 +19,7 @@
 package dev.benpetrillo.managers;
 
 import dev.benpetrillo.Config;
-import dev.benpetrillo.SCP062Bot;
+import dev.benpetrillo.SCP633;
 import dev.benpetrillo.commands.slash.*;
 import dev.benpetrillo.types.ApplicationCommand;
 import net.dv8tion.jda.api.JDA;
@@ -55,11 +55,11 @@ public class SlashCommandManager extends ListenerAdapter {
                     new StopCommand().getCommandData(),
                     new StreamCommand().getCommandData()
             ).queue();
-            SCP062Bot.logger.info("All slash commands have been deployed.");
+            SCP633.logger.info("All slash commands have been deployed.");
         } else if (Boolean.parseBoolean(Config.get("DELETE-GLOBAL"))) {
             CommandListUpdateAction commands = jda.updateCommands();
             commands.addCommands().queue();
-            SCP062Bot.logger.info("All global slash commands have been deleted.");
+            SCP633.logger.info("All global slash commands have been deleted.");
         }
         if (print) {
             RestAction<List<Command>> action = jda.retrieveCommands();

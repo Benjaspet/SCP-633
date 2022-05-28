@@ -18,7 +18,7 @@
 
 package dev.benpetrillo.listeners;
 
-import dev.benpetrillo.SCP062Bot;
+import dev.benpetrillo.SCP633;
 import dev.benpetrillo.utils.Utilities;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
@@ -35,7 +35,7 @@ public class MessageListener extends ListenerAdapter {
         TextChannel channel = event.getTextChannel();
         if (message.getContentDisplay().startsWith(prefix)) {
             String[] args = message.getContentDisplay().split(" ");
-            SCP062Bot.getMessageCommandManager().runCommand(member, channel, message, args);
+            SCP633.getMessageCommandManager().runCommand(member, channel, message, args);
         }
     }
 }

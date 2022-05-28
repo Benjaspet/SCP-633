@@ -2,14 +2,11 @@ package dev.benpetrillo.commands.slash;
 
 import dev.benpetrillo.types.ApplicationCommand;
 import dev.benpetrillo.utils.EmbedUtil;
-import net.dv8tion.jda.api.entities.AudioChannel;
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.exceptions.PermissionException;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import net.dv8tion.jda.api.managers.AudioManager;
 
 import java.io.IOException;
 import java.util.regex.PatternSyntaxException;

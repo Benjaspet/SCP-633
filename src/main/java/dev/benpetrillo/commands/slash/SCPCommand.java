@@ -52,7 +52,7 @@ public class SCPCommand implements ApplicationCommand {
                 JSONObject body = new JSONObject(response);
                 JSONObject fullBody = body.getJSONObject("data");
                 String name = Utilities.getNotNull(fullBody, "item", "private").toString();
-                String className = Utilities.getNotNull(fullBody, "class", "Unclassified").toString();
+                String className = Utilities.getNotNull(fullBody, "class", "Unclassified").toString().toUpperCase();
                 String description = Utilities.getNotNull(fullBody, "description", "Not found.").toString();
                 String procedures = Utilities.getNotNull(fullBody, "procedures", "Not found.").toString();
                 String image = Utilities.getNotNull(fullBody, "imageSrc", "").toString();
@@ -67,7 +67,8 @@ public class SCPCommand implements ApplicationCommand {
                 if (!image.isEmpty()) messageEmbed.setImage(image);
                 hook.editOriginalEmbeds(messageEmbed.build()).queue();
             } catch (JSONException ignored) {
-                messageEmbed.setDescription("Invalid response from the API.");
+                messageEmbed.setDescription(this.getRandomFailureMessage());
+                messageEmbed.setAuthor("Click here to view this file.", "https://scp-wiki.wikidot.com/scp-%s".formatted(Objects.requireNonNull(event.getOption("item")).getAsString()));
                 hook.editOriginalEmbeds(messageEmbed.build()).queue();
             } catch (IOException | InteractionFailureException ignored) {
                 messageEmbed.setDescription("An error occurred while running this command.");
@@ -93,5 +94,16 @@ public class SCPCommand implements ApplicationCommand {
     public CommandData getCommandData() {
         return new CommandData(this.name, this.description)
                 .addOption(OptionType.STRING, this.options[0], this.optionDescriptions[0], true);
+    }
+
+    private String getRandomFailureMessage() {
+        String[] messages = Utilities.shuffleArray(new String[]{
+                "You aren't cleared to access this data.",
+                "That data is classified!",
+                "An internal error occurred within SCP-633.",
+                "Whoopsie, you can't do that!",
+                "You must be of personnel Level 3 or higher to access this."
+        });
+        return messages[0];
     }
 }

@@ -19,7 +19,7 @@
 package dev.benpetrillo.listeners;
 
 import dev.benpetrillo.Config;
-import dev.benpetrillo.SCP062Bot;
+import dev.benpetrillo.SCP633;
 import dev.benpetrillo.commands.slash.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
@@ -35,7 +35,7 @@ public class ReadyListener extends ListenerAdapter {
     @Override
     public void onReady(@NotNull ReadyEvent event) {
         jda = event.getJDA();
-        SCP062Bot.logger.info("{} has logged in.", event.getJDA().getSelfUser().getAsTag());
+        SCP633.logger.info("{} has logged in.", event.getJDA().getSelfUser().getAsTag());
         String[] guildIds = Config.get("GUILD").split(",");
         for (String id : guildIds) {
             Guild guild = jda.getGuildById(id);
@@ -51,14 +51,14 @@ public class ReadyListener extends ListenerAdapter {
                             new StreamCommand().getCommandData()
                     );
                     commands.queue();
-                    SCP062Bot.logger.info("All guild slash commands have been deployed.");
+                    SCP633.logger.info("All guild slash commands have been deployed.");
                 } else if (Boolean.parseBoolean(Config.get("DELETE-GUILD"))) {
                     CommandListUpdateAction commands = guild.updateCommands().addCommands();
                     commands.queue();
-                    SCP062Bot.logger.info("All guild slash commands have been deleted.");
+                    SCP633.logger.info("All guild slash commands have been deleted.");
                 }
             } else {
-                SCP062Bot.logger.info("An error occurred while deploying guild slash commands.");
+                SCP633.logger.info("An error occurred while deploying guild slash commands.");
             }
         }
     }

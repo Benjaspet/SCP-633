@@ -18,7 +18,7 @@
 
 package dev.benpetrillo.listeners;
 
-import dev.benpetrillo.SCP062Bot;
+import dev.benpetrillo.SCP633;
 import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.events.guild.GuildLeaveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -34,7 +34,7 @@ public class GuildActivityListener extends ListenerAdapter {
     public void onGuildJoin(@NotNull GuildJoinEvent event) {
         String id = event.getGuild().getId();
         String name = event.getGuild().getName();
-        SCP062Bot.logger.info("Added to guild {} with ID {}.", name, id);
+        SCP633.logger.info("Added to guild {} with ID {}.", name, id);
     }
 
     /**
@@ -45,6 +45,6 @@ public class GuildActivityListener extends ListenerAdapter {
     public void onGuildLeave(@NotNull GuildLeaveEvent event) {
         String id = event.getGuild().getId();
         String name = event.getGuild().getName();
-        SCP062Bot.logger.info("Removed from guild {} with ID {}.", name, id);
+        SCP633.logger.info("Removed from guild {} with ID {}.", name, id);
     }
 }
