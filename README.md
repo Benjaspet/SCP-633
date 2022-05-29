@@ -16,13 +16,13 @@ SCP-062 OS supports slash commands and prefix commands.
 - ``help`` - View a list of all available commands.
 - ``ping`` - View the system's latency.
 - ``scp <item>`` – Obtain data on any SCP anomaly.
-- ``shutdown`` - Power off SCP-062.
+- ``shutdown`` - Power off SCP-633.
 - ``stream`` - Listen to the SCP Foundation's radio.
 - ``userinfo <user>`` - Obtain data on a guild member.
 
 ### Obtaining an API Key
 
-SCP-062 OS required a valid Ponjo API key to function properly. To obtain one of your own, make a ticket [here](https://ponjo.club/discord).
+SCP-633 required a valid Ponjo API key to function properly. To obtain one of your own, make a ticket [here](https://ponjo.club/discord).
 
 ### Credits
 
@@ -33,4 +33,4 @@ SCP-062 OS required a valid Ponjo API key to function properly. To obtain one of
 
 © Copyright 2022-Present Ben Petrillo. All rights reserved.
 
-SCP-062 is licensed under the [MIT License](https://www.mit.edu/~amini/LICENSE.md), and modification is permitted provided that proper credit is given to the original author(s).
+SCP-633 is licensed under the [MIT License](https://www.mit.edu/~amini/LICENSE.md), and modification is permitted provided that proper credit is given to the original author(s).
